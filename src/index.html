@@ -4,9 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>MovieLover</title>
+  <link rel="stylesheet" href="estilo.css">
 </head>
-<body>
+
+<body> 
+  <header></header>
+  <section id="container" class="container">
+    <a href="#/"></a>
+  </section>
+  <footer> </footer>
+  
   <script type="module" src="main.js"></script>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDDztJa9Pbpsg9DXTTc9-v5UPPyawuY-vg",
+      authDomain: "movielover-fae35.firebaseapp.com",
+      projectId: "movielover-fae35",
+      storageBucket: "movielover-fae35.appspot.com",
+      messagingSenderId: "758036105206",
+      appId: "1:758036105206:web:5414306fcc69ddd100a9d7",
+      measurementId: "G-J12R0Q3XFJ"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
 </body>
 </html>

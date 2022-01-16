@@ -1,0 +1,101 @@
+/*.fondoImg img{
+    position:absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+}*/
+
+.container{
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.text { 
+    color: #FF4444; 
+}
+
+.signup-name{
+    width: 320px;
+    height: 25px;
+    border-radius: 40px;
+    background-color: #F8F1F1;
+    border: 2px solid #A5A5A5 ;
+    box-shadow: 1px 1px 2px 1px #8888
+}
+
+.signup-email{
+    width: 320px;
+    height: 25px;
+    border: 2px solid #A5A5A5 ;
+    border-radius: 40px;
+    background-color: #F8F1F1;
+    box-shadow: 1px 1px 2px 1px #8888
+}
+
+.signup-password{
+    width: 320px;
+    height: 25px;
+    border-radius: 40px;
+    background-color: #F8F1F1;
+    border: 2px solid #A5A5A5 ;
+    box-shadow: 1px 1px 2px 1px #8888
+}
+
+.login-email{
+    width: 320px;
+    height: 25px;
+    border-radius: 40px;
+    background-color: #F8F1F1;
+    border: 2px solid #A5A5A5 ;
+    box-shadow: 1px 1px 2px 1px #8888
+}
+
+.login-password{
+    width: 320px;
+    height: 25px;
+    border-radius: 40px;
+    background-color: #F8F1F1;
+    border: 2px solid #A5A5A5 ;
+    box-shadow: 1px 1px 2px 1px #8888
+}
+
+.button-login{
+    height: 35px;
+    width: 100px;
+    border-radius: 40px;
+    margin: 10px 0px 6px 0px;
+    border: 1.5px transparent;
+    background-color: #FF4444;
+    color: #ffffff;
+    font-size: 14px;
+    box-shadow: 1px 1px 2px 1px #8888;
+    font-weight: bold;
+}
+
+.button-signup{
+    height: 35px;
+    width: 100px;
+    border-radius: 40px;
+    margin: 10px 0px 6px 0px;
+    border: 1.5px transparent;
+    background-color: #FF4444;
+    color: #ffffff;
+    font-size: 14px;
+    box-shadow: 1px 1px 2px 1px #8888;
+    font-weight: bold;
+}
+
+.google{
+    height: 35px;
+    width: 35px;
+}
+
+.logo2{
+    height: 140px;
+    width: 135px;
+    padding-left: 18px;
+    /*padding-top: 65px;*/
+}
