@@ -1,5 +1,9 @@
+import { loginEmail } from '../../firebase/firebase-auth.js';
+
 export default () => {
-  const viewLogin = `
+  const viewLogin = document.createElement('div');
+  viewLogin.classList.add('sectionLogin');
+  viewLogin.innerHTML = `
     <div id="containerRegister" class="containerRegister">
       
     <!--<div class="fondoImg">
@@ -16,17 +20,17 @@ export default () => {
         <p>¡Bienvenido a <span class="text">MovieLover</span>! la red de fánaticos por las películas</p>
     </div>
   
-    <div id="cajas de texto">
+    <form id="login-form">
     <input type="email" id="login-email" class="login-email" type="text" placeholder="  Correo electrónico" required>
     <br><br>
     <input type="password" id="login-password" class="login-password" type="text" placeholder="  Contraseña" required>
-    </div>
     <br>
   
     <div id="button" class="button">
       <button type="submit" class="button-login">Entrar</button>
     </div>
-  
+    </form>
+
     <div>
       <p>O bien ingresa con...</p>
       <img class="google" src="img/googleC.png" alt="">
@@ -34,9 +38,20 @@ export default () => {
     </div>
     </div>
   `;
-
-  const divElemt = document.createElement('div');
-  divElemt.classList.add('position');
-  divElemt.innerHTML = viewLogin;
-  return divElemt;
+  const email = viewLogin.querySelector('.login-email');
+  const password = viewLogin.querySelector('.login-password');
+  const buttonEntrar = viewLogin.querySelector('#login-form');
+  buttonEntrar.addEventListener('submit', () => {
+    loginEmail(email.value, password.value)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log('hola');
+        console.log(user);
+        // window.location.hash = '#/Home';
+      })
+      .catch(() => {
+        console.log('falló');
+      });
+  });
+  return viewLogin;
 };

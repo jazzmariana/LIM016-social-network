@@ -1,5 +1,5 @@
-import { components } from '../view/login-signUp/index.js';
-
+import { components } from '../view/navegador/index.js';
+// eslint-disable-next-line consistent-return
 const changeView = (route) => {
   const container = document.getElementById('container');
   container.innerHTML = '';
@@ -7,13 +7,14 @@ const changeView = (route) => {
     case '':
     { return container.appendChild(components.login()); }
     case '#/signup':
-    { return container.appendChild(components.signUp()); }
+    // eslint-disable-next-line no-sequences
+    { return container.appendChild(components.signup()); }
     case '#/login':
     { return container.appendChild(components.login()); }
 
     default:
       break;
   }
-  console.log(route);
+  // console.log(route);
 };
 export { changeView };
