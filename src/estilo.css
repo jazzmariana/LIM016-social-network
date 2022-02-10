@@ -99,3 +99,43 @@
     padding-left: 18px;
     /*padding-top: 65px;*/
 }
+/* home*/
+.label-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+.post-label{
+    border-radius: 10px;
+    padding: 10px;
+    width: 25vw;
+    border: none;
+    font-size: 15px;
+    font-weight: 550;
+    display:flex;
+    justify-content: center;
+    background: linear-gradient(89.19deg, #e2b270 2.65%, #ee6363 94.74%);
+    text-shadow: rgb(219, 38, 38) 1px 0 10px;
+
+}
+
+.post-label:hover{
+   /* transform: scale(1.05);*/
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+.link-labels {
+    text-decoration: none;
+    color:white;
+}
+.contenedorHome{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 55px auto;
+    border-radius: 14px;
+    box-shadow: 20px 20px 25px rgba(0, 0, 0, 0.25);
+    height: 100vh;
+    height:  calc(100vh - 20px);
+    justify-content:center;
+}
+

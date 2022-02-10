@@ -10,13 +10,27 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  GoogleAuthProvider,
+
 // eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.6.4/firebase-auth.js';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  query,
+  onSnapshot,
+  deleteDoc,
+  doc,
+  getDoc,
+} from 'https://www.gstatic.com/firebasejs/9.6.4/firebase-firestore.js';
+
+import {
+
+} from 'https://www.gstatic.com/firebasejs/9.6.4/firebase-storage.js';
+
 const firebaseConfig = {
   apiKey: 'AIzaSyDDztJa9Pbpsg9DXTTc9-v5UPPyawuY-vg',
   authDomain: 'movielover-fae35.firebaseapp.com',
@@ -31,6 +45,7 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const analytics = getAnalytics(app);
 export const auth = getAuth();
+export const db = getFirestore();
 
 export {
   signOut,
@@ -40,4 +55,16 @@ export {
   initializeApp,
   getAnalytics,
   getAuth,
+  GoogleAuthProvider,
+};
+export {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  query,
+  onSnapshot,
+  deleteDoc,
+  doc,
+  getDoc,
 };

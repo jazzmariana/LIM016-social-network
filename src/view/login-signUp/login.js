@@ -33,6 +33,7 @@ export default () => {
 
     <div>
       <p>O bien ingresa con...</p>
+      <button id="btnlogingoogle">Login con Google</button>
       <img class="google" src="img/googleC.png" alt="">
       <p>¿No tienes una cuenta? <a href="#/signup">Regístrate.</a></p>
     </div>
@@ -45,11 +46,14 @@ export default () => {
     loginEmail(email.value, password.value)
       .then((userCredential) => {
         const user = userCredential.user;
+        // eslint-disable-next-line no-console
         console.log('hola');
+        // eslint-disable-next-line no-console
         console.log(user);
-        // window.location.hash = '#/Home';
+        window.location.hash = '#/home';
       })
       .catch(() => {
+        // eslint-disable-next-line no-console
         console.log('falló');
       });
   });
