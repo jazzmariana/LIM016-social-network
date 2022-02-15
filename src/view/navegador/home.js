@@ -2,7 +2,7 @@
 /* eslint-disable import/no-unresolved */
 
 import {
-  publishPost, getPosts, onGetPosts, deletePost, getPost,
+  publishPost, getPosts, onGetPosts, deletePost, getPost, updatePost,
 } from '../../firebase/firestore.js';
 
 export default () => {
@@ -39,7 +39,9 @@ export default () => {
 <form class= "post">
 <div class="crearPost">
 <textarea id = "post-text" class="crear" rows="4" cols="50" placeholder = "Crea tu post"></textarea>
+<button class="cancel-button" id="cancel-button" style="display:none" type="submit">Cancelar</button>
 <button type="submit" id = "btnPublicar">publicar</button>
+
 </div>
 </form>
 <div class= "post-container"></div>
@@ -73,7 +75,11 @@ export default () => {
   const postsContainer = viewHome.querySelector('.post-container');
   const postForm = viewHome.querySelector('.post');
 
+  // -----Botones del Post
+  const text = postForm['post-text'];
+
   let editStatus = false;
+  let id = '';
 
   const mostrarPublicaciones = async () => {
     // const querySnapshot = await getPosts();
@@ -112,7 +118,19 @@ export default () => {
           postForm['post-text'].value = post.text;
 
           editStatus = true;
+          id = doc.id;
+
+          // eslint-disable-next-line dot-notation
+          postForm['btnPublicar'].innerText = 'Guardar Cambios';
+          postForm.querySelector('.cancel-button').style.display = 'block';
         });
+      });
+      const btnCancel = postForm.querySelector('.cancel-button');
+      btnCancel.addEventListener('click', () => {
+        // eslint-disable-next-line dot-notation
+        postForm['btnPublicar'].innerText = 'publicar';
+        editStatus = false;
+        postForm.querySelector('.cancel-button').style.display = 'none';
       });
     });
   };
@@ -121,12 +139,16 @@ export default () => {
   postForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const text = postForm['post-text'];
+    // const text = postForm['post-text'];
 
-    if (editStatus) {
-      console.log('actualizando');
-    } else {
+    if (!editStatus) {
       publishPost(text.value);
+    } else {
+      updatePost((id), {
+        text: text.value,
+      });
+
+      editStatus = false;
     }
 
     postForm.reset();
